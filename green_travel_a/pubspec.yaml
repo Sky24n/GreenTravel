@@ -7,18 +7,48 @@ description: A new Flutter application.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.0.0+1
+version: 0.0.1
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=1.19.0 <3.0.0"
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # 汉字转拼音库 https://github.com/flutterchina/lpinyin
+  lpinyin: ^1.0.7
+  # Dart 常用工具类库 https://github.com/Sky24n/common_utils
+  common_utils: ^1.0.9
+  # Flutter 常用工具类库 https://github.com/Sky24n/flustars
+  flustars: ^0.1.9
+  # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
+  fluintl: ^0.1.2
+  # Flutter 城市列表 https://github.com/flutterchina/azlistview
+  azlistview: ^0.1.0
+
+  # https://github.com/flutterchina/dio
+  dio: ^1.0.13
+  # rxdart https://github.com/ReactiveX/rxdart
+  rxdart: ^0.18.1
+  # https://github.com/renefloor/flutter_cached_network_image
+  cached_network_image: ^0.5.0
+  # https://github.com/flutter/plugins/tree/master/packages/url_launcher
+  url_launcher: ^4.0.1
+  # https://github.com/peng8350/flutter_pulltorefresh
+  pull_to_refresh: ^1.1.6
+  # device_info
+  device_info: ^0.3.0
+  # webview_flutter
+  webview_flutter: ^0.3.3+1
+  # https://github.com/flutterchina/flukit.
+  flukit: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +65,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/3.0x/
+
+    - assets/data/china.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:
