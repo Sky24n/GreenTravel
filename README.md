@@ -16,8 +16,8 @@ Flutter 仿滴滴出行App
 // 异步等待Sp初始化完成  
 await SpUtil.getInstance();   
 // 同步获取数据  
-SpUtil.putString('key', value); 
-SpUtil.getString('key', defValue: ''); 
+SpUtil.putString('key', value);  
+SpUtil.getString('key', defValue: '');  
 SpUtil.getInt('key', defValue: 0);  
   
 ### ScreenUtil  
