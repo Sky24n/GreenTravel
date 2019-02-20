@@ -65,9 +65,11 @@ Email &nbsp;&nbsp;: 863764940@qq.com
 
 ### 关于App
 GitHub : [GreenTravel](https://github.com/Sky24n/GreenTravel)  
-安卓Apk : [点击下载 v0.0.1](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/green_travel_a.apk)  
-Android扫码下载APK:  
-  ![绿色出行](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/qrcode.png)  
-Android扫码下载APK(二)：  
-速度较快，但有次数限制，若无法下载，请通过上面两种方式下载。   
-  ![绿色出行](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/qr.png)  
+仅支持安卓Apk下载，通道一速度较快，但有次数限制！若通道一无法下载请通过通道二下载。  
+通道一点击下载：[绿色出行v0.0.1](http://bmob-cdn-23826.b0.upaiyun.com/2019/02/21/8ee7b4b24043380b80f5990357c93092.apk)  
+通道一扫码下载：
+![通道一](https://user-gold-cdn.xitu.io/2019/2/21/1690bda285f8263a?w=360&h=360&f=png&s=54250)
+
+通道二点击下载：[绿色出行v0.0.1](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/green_travel_a.apk)  
+通道二扫码下载:  
+![通道二](https://user-gold-cdn.xitu.io/2019/2/20/1690a0ced26b695e?w=360&h=360&f=png&s=20552)
