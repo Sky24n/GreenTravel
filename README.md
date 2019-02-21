@@ -9,8 +9,8 @@ Flutter 仿滴滴出行App
 2、城市列表，索引&悬停效果 [AzListView](https://github.com/flutterchina/azlistview)  
 3、也许是目前最好用的Sp工具类 [SpUtil](https://github.com/Sky24n/flustars)  
 4、也许是目前最好用的屏幕工具类 [ScreenUtil](https://github.com/Sky24n/flustars)  
-5、闪屏页  
-6、国际化  
+5、闪屏页 [SplashPage](https://github.com/Sky24n/GreenTravel/blob/master/green_travel_a/lib/ui/pages/splash_page.dart)  
+6、国际化 [flustars](https://github.com/Sky24n/flustars)  
 7、Dart常用工具类库 [common_utils](https://github.com/Sky24n/common_utils)
 
 ### SpUtil  
