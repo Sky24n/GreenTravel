@@ -10,7 +10,8 @@ Flutter 仿滴滴出行App
 3、也许是目前最好用的Sp工具类 [SpUtil](https://github.com/Sky24n/flustars)  
 4、也许是目前最好用的屏幕工具类 [ScreenUtil](https://github.com/Sky24n/flustars)  
 5、闪屏页  
-6、国际化
+6、国际化  
+7、Dart常用工具类库 [common_utils](https://github.com/Sky24n/common_utils)
 
 ### SpUtil  
 // 异步等待Sp初始化完成  
