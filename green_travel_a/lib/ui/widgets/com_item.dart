@@ -62,8 +62,8 @@ class ComItem extends StatelessWidget {
           height: 128,
           fit: BoxFit.fill,
           imageUrl: model.imgUrl,
-          placeholder: new ProgressView(),
-          errorWidget: new Icon(Icons.error),
+          placeholder: (context, url) => new ProgressView(),
+          errorWidget: (context, url, error) => new Icon(Icons.error),
         ),
       );
     } else {

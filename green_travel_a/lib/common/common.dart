@@ -10,7 +10,7 @@ class Constant {
 
 class AppConfig {
   static const String appName = 'green_travel_a';
-  static const String version = '0.0.1';
+  static const String version = '0.0.2';
   static const bool isDebug = false;
 }
 
