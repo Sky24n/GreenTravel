@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:green_travel_a/res/index.dart';
+import 'package:base_library/base_library.dart';
 
-class TextStyles {
+class _TextStyles {
   static const TextStyle listTitle = TextStyle(
     fontSize: Dimens.font_sp16,
     color: Colours.text_dark,
@@ -21,14 +22,14 @@ class TextStyles {
   );
 }
 
-class Decorations {
+class _Decorations {
   static const Decoration bottom = BoxDecoration(
       border: Border(
           bottom:
               BorderSide(width: Dimens.border_width, color: Colours.divider)));
 }
 
-class Gaps {
+class _Gaps {
   static Widget hGap3 = new SizedBox(width: Dimens.gap_dp3);
   static Widget hGap5 = new SizedBox(width: Dimens.gap_dp5);
   static Widget hGap10 = new SizedBox(width: Dimens.gap_dp10);

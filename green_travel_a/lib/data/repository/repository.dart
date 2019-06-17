@@ -1,6 +1,6 @@
+import 'package:base_library/base_library.dart';
 import 'package:green_travel_a/common/common.dart';
 import 'package:green_travel_a/data/api/apis.dart';
-import 'package:green_travel_a/data/net/dio_util.dart';
 import 'package:green_travel_a/data/protocol/models.dart';
 
 class Repository {

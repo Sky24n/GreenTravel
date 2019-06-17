@@ -38,9 +38,9 @@ class SplashPageState extends State<SplashPage> {
     _initAsync();
   }
 
-  void _loadSplashData() async {
-    await SpUtil.getInstance();
-    _splashModel = SpHelper.getSplashModel();
+  void _loadSplashData() {
+    _splashModel = SpUtil.getObj(
+        Constant.key_splash_model, (v) => SplashModel.fromJson(v));
     if (_splashModel != null) {
       setState(() {});
     }
@@ -48,13 +48,13 @@ class SplashPageState extends State<SplashPage> {
     httpUtil.getSplash().then((model) {
       if (!ObjectUtil.isEmpty(model.imgUrl)) {
         if (_splashModel == null || (_splashModel.imgUrl != model.imgUrl)) {
-          SpHelper.putObject(Constant.key_splash_model, model);
+          SpUtil.putObject(Constant.key_splash_model, model);
           setState(() {
             _splashModel = model;
           });
         }
       } else {
-        SpHelper.putObject(Constant.key_splash_model, null);
+        SpUtil.putObject(Constant.key_splash_model, null);
       }
     });
   }
@@ -72,7 +72,6 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _initSplash() {
-    _splashModel = SpHelper.getSplashModel();
     if (_splashModel == null) {
       _goMain();
     } else {
@@ -281,7 +280,7 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _goMain() {
-    Navigator.of(context).pushReplacementNamed('/MainPage');
+    RouteUtil.goMain(context);
   }
 
   @override

@@ -4,6 +4,8 @@ export 'package:green_travel_a/res/index.dart';
 export 'package:green_travel_a/utils/index.dart';
 export 'package:green_travel_a/blocs/index.dart';
 
+export 'package:base_library/base_library.dart';
+
 export 'package:green_travel_a/common/common.dart';
 export 'package:green_travel_a/common/sp_helper.dart';
 export 'package:green_travel_a/event/event.dart';

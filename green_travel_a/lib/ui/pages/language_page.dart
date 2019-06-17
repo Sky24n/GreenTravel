@@ -21,7 +21,8 @@ class _LanguagePageState extends State<LanguagePage> {
     _list.add(LanguageModel(Ids.languageZH, 'zh', 'CH'));
     _list.add(LanguageModel(Ids.languageEN, 'en', 'US'));
 
-    _currentLanguage = SpHelper.getLanguageModel();
+    _currentLanguage =
+        SpUtil.getObj(Constant.key_language, (v) => LanguageModel.fromJson(v));
     if (ObjectUtil.isEmpty(_currentLanguage)) {
       _currentLanguage = _list[0];
     }
@@ -49,7 +50,7 @@ class _LanguagePageState extends State<LanguagePage> {
           new FlatButton(
               padding: EdgeInsets.all(12),
               onPressed: () {
-                SpHelper.putObject(
+                SpUtil.putObject(
                     Constant.key_language,
                     ObjectUtil.isEmpty(_currentLanguage.languageCode)
                         ? null

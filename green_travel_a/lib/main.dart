@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:green_travel_a/blocs/index.dart';
 import 'package:green_travel_a/common/component_index.dart';
-import 'package:green_travel_a/data/net/dio_util.dart';
 import 'package:green_travel_a/ui/pages/main_page.dart';
 import 'package:green_travel_a/ui/pages/splash_page.dart';
 
-void main() => runApp(BlocProvider<ApplicationBloc>(
-      bloc: ApplicationBloc(),
-      child: BlocProvider(child: MyApp(), bloc: MainBloc()),
-    ));
+void main() async {
+  await SpUtil.getInstance();
+  runApp(BlocProvider<ApplicationBloc>(
+    bloc: ApplicationBloc(),
+    child: BlocProvider(child: MyApp(), bloc: MainBloc()),
+  ));
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -27,7 +29,6 @@ class MyAppState extends State<MyApp> {
     super.initState();
     setLocalizedValues(localizedValues);
     _init();
-    _initAsync();
     _initListener();
   }
 
@@ -37,11 +38,6 @@ class MyAppState extends State<MyApp> {
     options.baseUrl = Constant.server_address;
     HttpConfig config = new HttpConfig(options: options);
     DioUtil().setConfig(config);
-  }
-
-  void _initAsync() async {
-    await SpUtil.getInstance();
-    if (!mounted) return;
     _loadLocale();
   }
 
@@ -59,8 +55,10 @@ class MyAppState extends State<MyApp> {
   }
 
   void _loadLocale() {
+    if (!mounted) return;
     setState(() {
-      LanguageModel model = SpHelper.getLanguageModel();
+      LanguageModel model = SpUtil.getObj(
+          Constant.key_language, (v) => LanguageModel.fromJson(v));
       if (model != null) {
         _locale = new Locale(model.languageCode, model.countryCode);
       } else {
@@ -78,7 +76,7 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       routes: {
-        '/MainPage': (ctx) => MainPage(),
+        BaseConstant.routeMain: (ctx) => MainPage(),
       },
       home: new SplashPage(),
       theme: ThemeData.light().copyWith(

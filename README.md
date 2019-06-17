@@ -40,6 +40,7 @@ AzListView(
 ```
 
 ### SpUtil  
+支持get传入默认值，支持存储对象，支持存储对象数组。  
 详细使用请参考仓库说明。
 ```dart
 import 'package:flustars/flustars.dart';  
@@ -56,8 +57,7 @@ City city = new City();
 city.name = "成都市";
 SpUtil.putObject("loc_city", city);
   
-Map dataStr = SpUtil.getObject("loc_city");
-City hisCity = dataStr == null ? null : City.fromJson(dataStr);
+City hisCity = SpUtil.getObj("loc_city", (v) => City.fromJson(v));  
 print("thll Str: " + (hisCity == null ? "null" : hisCity.toString()));
   
 /// save object list example.
@@ -67,10 +67,7 @@ list.add(new City(name: "成都市"));
 list.add(new City(name: "北京市"));
 SpUtil.putObjectList("loc_city_list", list);
   
-List<Map> dataList = SpUtil.getObjectList("loc_city_list");
-List<City> _cityList = dataList?.map((value) {
-  return City.fromJson(value);
-})?.toList();
+List<City> dataList = SpUtil.getObjList("loc_city_list", (v) => City.fromJson(v));
 
 print("thll List: " + (_cityList == null ? "null" : _cityList.toString()));    
 ```
@@ -87,13 +84,13 @@ setDesignWHD(_designW,_designH,_designD);
 // 屏幕宽  
 double screenWidth = ScreenUtil.getInstance().screenWidth;  
 // 根据屏幕宽适配后尺寸  
-double adapterW100 = ScreenUtil.getInstance().getWidth(100);  
+double adapterSize = ScreenUtil.getInstance().getAdapterSize(100);
 
 // 依赖context  
 // 屏幕宽  
 double screenWidth = ScreenUtil.getScreenW(context);  
 // 根据屏幕宽适配后尺寸  
-double adapterW100 = ScreenUtil.getScaleW(context, 100);  
+double adapterSize = ScreenUtil.getAdapterSizeCtx(context, 100) 
 ```
 
 ### fluintl  
