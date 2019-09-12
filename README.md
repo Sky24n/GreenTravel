@@ -3,7 +3,7 @@ Flutter 仿滴滴出行App
 地图：采用高德地图，仅简单完成了部分功能，基础地图，地址检索，逆地理编码。  
 界面：仿滴滴主界面，地图中心请求动效果，服务tabs展开效果，地址检索界面，城市列表界面。  
 项目结构：详见作者另外一个Flutter完整项目[flutter_wanandroid](https://github.com/Sky24n/flutter_wanandroid)。🔥🔥🔥  
-### 注意！目前本项目仅部分开源～并不包含地图。 
+### 注意！目前本项目仅部分开源～并不包含地图相关功能。 
 已开源内容：  
 1、Dart汉字转拼音库 [lpinyin](https://github.com/flutterchina/lpinyin)  
 2、仿滴滴城市列表，索引&悬停效果 [AzListView](https://github.com/flutterchina/azlistview)  
