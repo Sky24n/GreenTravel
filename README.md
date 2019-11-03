@@ -111,7 +111,10 @@ IntlUtil.getString(context, Ids.titleHome, params: [param1, param2]);　
 CustomLocalizations.of(context).getString(Ids.titleHome);
 ```
 
-## Screenshot
+## Screenshot  
+
+### 注意！截图可能无法正常显示，请前往掘金查看[Flutter 仿滴滴出行App](https://juejin.im/post/5c6cc95e518825266c3f095a) 
+
 ### 引导页
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/guide.gif" width="240">  
    
@@ -133,6 +136,7 @@ CustomLocalizations.of(context).getString(Ids.titleHome);
 ### 关于App
 GitHub : [GreenTravel](https://github.com/Sky24n/GreenTravel)  
 仅支持安卓Apk下载  
+APK点击下载：[百度云盘地址](https://github.com/Sky24n/FlutterRepos)  
 APK点击下载：[绿色出行v0.0.2](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/green_travel_a.apk)  
 APK扫码下载:   
 ![通道二](https://user-gold-cdn.xitu.io/2019/2/20/1690a0ced26b695e?w=360&h=360&f=png&s=20552)  
