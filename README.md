@@ -12,6 +12,18 @@ Flutter 仿滴滴出行App
 5、仿滴滴国际化效果 [fluintl](https://github.com/Sky24n/fluintl)  
 6、Flutter常用工具类库 [flustars](https://github.com/Sky24n/flustars)
 
+
+### 近期github无法预览图片和外链下载。
+1、App无法下载问题   
+
+这里提供最新下载方式。[App链接](https://github.com/Sky24n/Doc)
+  
+2、无法查看截图，大家可以去简书或掘金查看！  
+  
+[简书地址](https://www.jianshu.com/p/f6d1206aa80a)    
+
+[掘金地址](https://juejin.im/post/5c6cc95e518825266c3f095a)
+
 ### lpinyin
 ```dart
 import 'package:lpinyin/lpinyin.dart';
@@ -112,8 +124,6 @@ CustomLocalizations.of(context).getString(Ids.titleHome);
 ```
 
 ## Screenshot  
-
-### 注意！截图可能无法正常显示，请前往掘金查看[Flutter 仿滴滴出行App](https://juejin.im/post/5c6cc95e518825266c3f095a) 
 
 ### 引导页
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/guide.gif" width="240">  
