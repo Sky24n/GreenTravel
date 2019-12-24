@@ -6,12 +6,15 @@ import 'package:green_travel_a/common/component_index.dart';
 import 'package:green_travel_a/ui/pages/main_page.dart';
 import 'package:green_travel_a/ui/pages/splash_page.dart';
 
-void main() async {
-  await SpUtil.getInstance();
-  runApp(BlocProvider<ApplicationBloc>(
-    bloc: ApplicationBloc(),
-    child: BlocProvider(child: MyApp(), bloc: MainBloc()),
-  ));
+import 'blocs/global.dart';
+
+void main() {
+  Global.init(() {
+    runApp(BlocProvider<ApplicationBloc>(
+      bloc: ApplicationBloc(),
+      child: BlocProvider(child: MyApp(), bloc: MainBloc()),
+    ));
+  });
 }
 
 class MyApp extends StatefulWidget {
