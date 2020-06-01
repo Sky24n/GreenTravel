@@ -34,43 +34,49 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new DefaultTabController(
+    return DefaultTabController(
         length: _tabList.length,
-        child: new Scaffold(
+        child: Scaffold(
           resizeToAvoidBottomPadding: false,
-          appBar: new MyAppBar(
-            leading: new Image.asset(
-              Utils.getImgPath(Ids.icon_title_user),
-              width: 24.0,
-              height: 24.0,
-            ),
-            title: new InkWell(
+          appBar: AppBar(
+            leading: Builder(builder: (BuildContext ctx) {
+              return IconButton(
+                  icon: Image.asset(
+                    Utils.getImgPath(Ids.icon_title_user),
+                    width: 24.0,
+                    height: 24.0,
+                  ),
+                  onPressed: () {
+                    Scaffold.of(ctx).openDrawer();
+                  });
+            }),
+            title: InkWell(
               onTap: () {
                 NavigatorUtil.showDemoDialog(
                     context,
-                    new SelectCityPage(
+                    SelectCityPage(
                       eventId: EventIds.main_page_city,
                     ));
               },
-              child: new Container(
+              child: Container(
                 padding: EdgeInsets.all(Dimens.gap_dp12),
-                child: new Row(
+                child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      new Image.asset(
+                      Image.asset(
                         Utils.getImgPath(Ids.icon_title_didi),
                         width: 21.0,
                         height: 16.8,
                       ),
-                      new Container(
+                      Container(
                           margin: const EdgeInsets.only(left: 3.0, right: 2.0),
-                          child: new Text(
+                          child: Text(
                             "$_city",
-                            style: new TextStyle(
+                            style: TextStyle(
                                 color: Colors.grey[700], fontSize: 12.0),
                           )),
-                      new Image.asset(
+                      Image.asset(
                         Utils.getImgPath(Ids.icon_title_down),
                         width: 7.0,
                         height: 3.67,
@@ -81,15 +87,15 @@ class _MainPageState extends State<MainPage> {
             centerTitle: true,
             elevation: 0,
             actions: <Widget>[
-              new IconButton(
-                  icon: new Image.asset(
+              IconButton(
+                  icon: Image.asset(
                     Utils.getImgPath(Ids.icon_title_msg),
                     width: 20.0,
                     height: 20.0,
                   ),
                   onPressed: () {}),
-              new IconButton(
-                  icon: new Image.asset(
+              IconButton(
+                  icon: Image.asset(
                     Utils.getImgPath(Ids.icon_title_scan),
                     width: 20.0,
                     height: 20.0,
@@ -97,30 +103,30 @@ class _MainPageState extends State<MainPage> {
                   onPressed: () {})
             ],
           ),
-          body: new Column(
+          body: Column(
             children: <Widget>[
-              new Material(
+              Material(
                 color: Colors.white,
-                child: new Row(
+                child: Row(
                   children: <Widget>[
-                    new Expanded(
-                        child: new TabBar(
+                    Expanded(
+                        child: TabBar(
                             isScrollable: true,
                             indicatorColor: Colors.transparent,
                             indicatorSize: TabBarIndicatorSize.label,
                             labelColor: Colours.app_main,
                             unselectedLabelColor: Colours.gray_99,
-                            labelStyle: new TextStyle(fontSize: 14),
-                            unselectedLabelStyle: new TextStyle(fontSize: 14),
+                            labelStyle: TextStyle(fontSize: 14),
+                            unselectedLabelStyle: TextStyle(fontSize: 14),
                             tabs: _tabList.map((model) {
-                              return new Tab(
+                              return Tab(
                                 text: model.label ??
                                     IntlUtil.getString(context, model.labelId),
                               );
                             }).toList())),
-                    new IconButton(
+                    IconButton(
                         iconSize: 20,
-                        icon: new Icon(
+                        icon: Icon(
                           Icons.more_horiz,
                           color: Colours.gray_99,
                         ),
@@ -128,69 +134,77 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
               ),
-              new Expanded(child: new Container()),
-              new Container(
+              Expanded(
+                  child: Container(
+                child: Center(
+                  child: Text(
+                    'Map Empty',
+                    style: TextStyle(color: Colours.gray_66),
+                  ),
+                ),
+              )),
+              Container(
                 alignment: Alignment.bottomRight,
-                child: new IconButton(
+                child: IconButton(
                     iconSize: 32.0,
                     padding: const EdgeInsets.all(10.0),
-                    icon: new Image.asset(Utils.getImgPath(Ids.icon_map_loc)),
+                    icon: Image.asset(Utils.getImgPath(Ids.icon_map_loc)),
                     onPressed: () {}),
               ),
-              new Card(
+              Card(
                 elevation: 2.0,
                 shape: const RoundedRectangleBorder(
                   borderRadius:
                       const BorderRadius.all(const Radius.circular(2.0)),
                 ),
-                child: new Column(
+                child: Column(
                   children: <Widget>[
-                    new InkWell(
+                    InkWell(
                         onTap: () {},
-                        child: new Container(
+                        child: Container(
                           height: 50.0,
-                          child: new Row(
+                          child: Row(
                             children: <Widget>[
-                              new Container(
+                              Container(
                                 width: 40.0,
-                                child: new Image.asset(
+                                child: Image.asset(
                                   Utils.getImgPath(Ids.icon_addr_origin),
                                   width: 6.0,
                                   height: 6.0,
                                 ),
                               ),
-                              new Expanded(
-                                  child: new Text(
+                              Expanded(
+                                  child: Text(
                                 "正在获取上车点",
-                                style: new TextStyle(
+                                style: TextStyle(
                                     fontSize: 14.0, color: Colours.green_62),
                               ))
                             ],
                           ),
                         )),
-                    new Container(
+                    Container(
                       height: Dimens.border_width,
                       margin: EdgeInsets.only(left: 40.0),
                       color: Colours.gray_f0,
                     ),
-                    new InkWell(
+                    InkWell(
                         onTap: () {},
-                        child: new Container(
+                        child: Container(
                           height: 50.0,
-                          child: new Row(
+                          child: Row(
                             children: <Widget>[
-                              new Container(
+                              Container(
                                 width: 40.0,
-                                child: new Image.asset(
+                                child: Image.asset(
                                   Utils.getImgPath(Ids.icon_addr_dest),
                                   width: 6.0,
                                   height: 6.0,
                                 ),
                               ),
-                              new Expanded(
-                                  child: new Text(
+                              Expanded(
+                                  child: Text(
                                 "你要去哪儿",
-                                style: new TextStyle(
+                                style: TextStyle(
                                     fontSize: 14.0, color: Colours.gray_ce),
                               ))
                             ],
@@ -203,7 +217,7 @@ class _MainPageState extends State<MainPage> {
               )
             ],
           ),
-          drawer: new MainLeftPage(),
+          drawer: MainLeftPage(),
         ));
   }
 }

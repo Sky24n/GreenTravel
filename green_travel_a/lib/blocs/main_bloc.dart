@@ -1,8 +1,6 @@
-import 'dart:collection';
-
+import 'package:base_library/base_library.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:green_travel_a/blocs/bloc_provider.dart';
-import 'package:green_travel_a/models/models.dart';
 import 'package:green_travel_a/utils/http_utils.dart';
 import 'package:rxdart/rxdart.dart';
 

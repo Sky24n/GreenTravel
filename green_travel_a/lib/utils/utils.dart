@@ -18,17 +18,18 @@ class Utils {
         dayFormat: DayFormat.Common);
   }
 
-  /// 0
-  /// -1
-  /// 1
-  static int getUpdateStatus(String version) {
-    String locVersion = AppConfig.version;
+  /// 0 不升级
+  /// 1 升级
+  /// > x 强升
+  static int getUpdateStatus(String version, {String local}) {
+    if (ObjectUtil.isEmpty(version)) return 0;
+    String locVersion = local ?? AppConfig.version;
     int remote = int.tryParse(version.replaceAll('.', ''));
     int loc = int.tryParse(locVersion.replaceAll('.', ''));
     if (remote <= loc) {
       return 0;
     } else {
-      return (remote - loc >= 2) ? -1 : 1;
+      return remote - loc;
     }
   }
 

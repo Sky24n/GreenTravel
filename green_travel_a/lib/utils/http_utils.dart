@@ -1,10 +1,6 @@
-import 'dart:convert';
-
-import 'package:common_utils/common_utils.dart';
+import 'package:base_library/base_library.dart';
 import 'package:green_travel_a/common/common.dart';
-import 'package:green_travel_a/common/sp_helper.dart';
 import 'package:green_travel_a/models/models.dart';
-import 'package:green_travel_a/utils/index.dart';
 
 //模拟网络请求数据
 class HttpUtils {
@@ -26,7 +22,7 @@ class HttpUtils {
         title: '有新版本v0.0.2，去更新吧！',
         content: '',
         url:
-            'https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/green_trip_a.apk',
+            'https://raw.githubusercontent.com/Sky24n/Doc/master/apks/green_travel_a.apk',
         version: AppConfig.version,
       );
     });
